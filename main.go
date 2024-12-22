@@ -5,7 +5,13 @@ import "fmt"
 func main() {
 	cardNumber := []int{4, 0, 2, 4, 0, 0, 0, 9, 0, 2, 2, 1, 4, 3}
 	result := checkValidNum(cardNumber)
-	fmt.Println(result)
+	answer := ""
+	if result {
+		answer = "card is valid "
+	} else {
+		answer = "card is invalid"
+	}
+	fmt.Println(answer)
 }
 func checkValidNum(cardNumber []int) (result bool) {
 	total := 0
@@ -19,8 +25,6 @@ func checkValidNum(cardNumber []int) (result bool) {
 		total += cardNumber[i]
 
 	}
-	//fmt.Println(cardNumber)
-	//fmt.Println(total)
 	if total%10 == 0 {
 		return true
 	}
